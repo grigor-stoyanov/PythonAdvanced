@@ -52,6 +52,71 @@ print(my_set)
 a = {1, 2, 3, 4}
 b = {3, 4, 5, 6}
 # all operators have their apropriate functions
-print(f'union{a|b} intersection{a&b} subset {a<b} difference {a-b} sym diff{a^b}')
+print(f'union{a | b} intersection{a & b} subset {a < b} difference {a - b} sym diff{a ^ b}')
+
+
 # like the dictionary its a hash table
 # checking the elements of the set is constant regardless of numbers of elements in it
+# hash is an integer given to a value string,integer float
+# a set calculates this unique hash and enters it into a list
+class CustomSet:
+    resize_factor = 0.7
+
+    def __init__(self, ):
+        # creates a list with a certain capacity
+        self.capacity = 8
+        self.count = 0
+        self.values = [None] * self.capacity
+
+    def execute_resize_check(self):
+        return self.capacity * self.resize_factor >= self.count
+
+    # resizes to 70% of the list capacity when list exceeds its capacity
+
+    def resize(self):
+        old_values = self.values
+        self.count = 0
+        self.capacity *= 2
+        self.values = [None] * self.capacity
+        for nested_list in old_values:
+            if nested_list:
+                for value in nested_list:
+                    self.add(value)
+
+    def get_index(self, value):
+        value_hash = hash(value)
+        # we get an index range from 0 to +-capacity
+        index = abs(value_hash) % self.capacity
+        return index
+
+    def add(self, value):
+        index = self.get_index(value)
+        if not self.values[index]:
+            self.values[index] = []
+        if value not in self.values[index]:
+            self.values[index].append(value)
+            self.count += 1
+        if self.execute_resize_check():
+            self.resize()
+
+    def remove(self, value):
+        index = self.get_index(value)
+        if self.value[index]:
+            return
+        if value not in self.value[index]:
+            return
+        self.value[index].remove(value)
+        self.count -= 1
+
+    def contains(self, value):
+        index = self.get_index()
+        if  self.values[index]:
+            return False
+        if value not in self.values[index]:
+            return False
+        return True
+
+    def __contains__(self, item):
+        return self.contains(item)
+    def __len__(self):
+        return self.count

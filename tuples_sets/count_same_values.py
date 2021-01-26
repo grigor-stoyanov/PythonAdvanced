@@ -18,7 +18,7 @@ start = timeit.default_timer()
 # But it extracts each number's indexes every time by going trough them all
 # i = 0
 # indices_list = []
-# while i < len(nums_tuple):
+# while i < len (nums_tuple):
 #     if i not in indices_list:
 #         indices_list.extend(get_index(nums_tuple, nums_tuple[i], min()))
 #         print(f'{nums_tuple[i]} - {nums_tuple.count(nums_tuple[i])} times')
