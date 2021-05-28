@@ -28,3 +28,4 @@ for row_i in range(rows_count):
     for column_i in range(column_count):
         column_sums[column_i] += matrix[row_i][column_i]
 print(*column_sums, sep='\n')
+

@@ -12,3 +12,4 @@ for row in range(row_column):
     #         print((row, column))
     #         exit()
 print(f'{symbol} does not occur in the matrix')
+
