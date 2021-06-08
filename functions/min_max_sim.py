@@ -1,0 +1,7 @@
+line = list(map(int, input().split()))
+minimum_number = min(line)
+maximum_number = max(line)
+sum_of_all_numbers = sum(line)
+print(f"The minimum number is {minimum_number}")
+print(f"The maximum number is {maximum_number}")
+print(f"The sum number is {sum_of_all_numbers}")
