@@ -1,7 +1,7 @@
 def func_executor(*args):
     results = []
-    for func in args:
-        results.append(func[0](*func[1]))
+    for func, fargs in args:
+        results.append(func(*fargs))
 
     return results
 

@@ -7,6 +7,8 @@ print(sorted(nums))
 print(lambda a: a + 5)
 
 
+# some functions are high order functions which return functions or require functions ilke filter,map
+
 # argument is the object fed to a function and a parameter is in the function
 # built in functions may shadow with variables of the same name
 # *args **kwargs packing is useful when u dont know how much arguments u are feeding to ur function
@@ -36,7 +38,20 @@ def say_sth(base):
     if base == 0:
         return
     print('I am saying')
-    say_sth(base-1)
+    say_sth(base - 1)
+
+
 # recursion is less optimal than a cycle
 # recursion can be used to do different operation on different threads see expressions
 say_sth(5)
+
+def foo(spisuk = []): #default mutable argument
+    if spisuk is None:
+        spisuk = []
+    spisuk.append(1)
+    return spisuk
+
+foo()
+foo()
+print(foo)
+# some default arguments that are mutable can create bugs because they remain in memory with first call of the function
