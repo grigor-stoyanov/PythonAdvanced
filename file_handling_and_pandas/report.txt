@@ -1,0 +1,23 @@
+py
+- - -File_opener
+- - -__init__
+- - -directory_traversal
+- - -even_lines
+- - -file_deleter
+- - -file_manipulator
+- - -file_reader
+- - -file_writer
+- - -line_numbers
+- - -live_demo
+- - -word_count
+txt
+- - -example
+- - -file
+- - -input
+- - -my_first_file
+- - -new_file
+- - -numbers
+- - -output
+- - -python
+- - -report
+- - -words
