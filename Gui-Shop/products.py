@@ -9,6 +9,7 @@ ROW_SIZE = 3
 
 
 # TODO  pages or infinite scroll, add shopping update functionality, dynamic image positioning
+# TODO add products as admin and form for adding product data make adding new data dynamic
 def render_shop():
     clear_screen()
     with open(os.path.join('db', 'products.txt')) as file:

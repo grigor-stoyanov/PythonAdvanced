@@ -55,6 +55,7 @@ def render_registration():
     tk.Button(frame, text='Back', command=lambda: render_main_view()).grid(row=len(user_data), column=1)
 
 
+# TODO add validations to all fields, update grid positions and css
 def register(**data):
     with open(os.path.join('db', 'user_credentials.txt'), 'r') as file:
         for line in file:

@@ -10,10 +10,10 @@ for row in range(rows):
             if i >= len(snake):
                 i = 0
     else:
-        for col in range(-1, -cols-1, -1):
+        for col in range(-1, -cols - 1, -1):
             matrix[row][col] = snake[i]
             i += 1
             if i >= len(snake):
                 i = 0
 for row in matrix:
-    print(*row,sep='')
+    print(*row, sep='')

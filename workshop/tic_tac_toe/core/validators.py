@@ -27,3 +27,10 @@ def is_winner(board, sign):
             board[row][len(board) - row - 1] == sign]) == 3:
         return True
     return False
+
+
+def is_board_full(board):
+    for row in board:
+        if ' ' in row:
+            return False
+    return True

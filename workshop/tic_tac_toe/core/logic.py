@@ -1,4 +1,4 @@
-from tic_tac_toe.core.validators import is_position_in_range, is_place_available, is_winner
+from tic_tac_toe.core.validators import is_position_in_range, is_place_available, is_winner,is_board_full
 from tic_tac_toe.core.helpers import get_row_col, print_current_board_state
 
 
@@ -22,6 +22,9 @@ def play(players, board, turns):
             # check if there is a winner
             if is_winner(board, current_player_sign):
                 print(f'{current_player_name} won!')
+                exit(0)
+            if is_board_full(board):
+                print('Game over! No winner!')
                 exit(0)
         else:
             # read new position for the same player
