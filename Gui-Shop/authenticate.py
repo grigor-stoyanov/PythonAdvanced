@@ -6,6 +6,7 @@ from products import render_shop
 from tools import clear_screen, popup_message
 
 
+
 def render_main_view():
     clear_screen()
     tk.Button(frame, text='Login', command=lambda: render_login()
@@ -14,6 +15,7 @@ def render_main_view():
               bg='red', fg='cyan', font='16', width='10').grid(row='0', column='1', padx=0, pady=250)
 
 
+# TODO remember login functionality
 def render_login():
     clear_screen()
     tk.Label(frame, text='Username:').grid(row=0, column=0)
