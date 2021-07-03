@@ -6,7 +6,6 @@ from products import render_shop
 from tools import clear_screen, popup_message
 
 
-
 def render_main_view():
     clear_screen()
     tk.Button(frame, text='Login', command=lambda: render_login()

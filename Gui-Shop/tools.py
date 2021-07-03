@@ -16,12 +16,12 @@ def popup_message(popup_type):
     tk.Button(popup_window, bg='red', fg='green', text='OK', command=popup_window.destroy).grid(row=1, column=0)
 
 
-def regrid(event=None):
-    width = frame.winfo_width()
-    slaves = list(frame.grid_slaves())
+def regrid(frame2, event):
+    width = event.width
+    slaves = list(frame2.grid_slaves())
     max_width = max(100, max(slave.winfo_width() for slave in slaves))
-    max_row_size = width // max_width
-    if max_row_size <= width // 100:
+    max_row_size = (width // max_width)
+    if max_row_size == width // 100:
         return
     col = row = 0
     i = 0
@@ -35,3 +35,7 @@ def regrid(event=None):
             slave.grid(row=row + j, column=col)
         col += 1
         i += 1
+
+
+def mouse_wheel(canvas,event):
+    canvas.yview_scroll(-1*int(event.delta/120),"units")
